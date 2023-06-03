@@ -13,10 +13,10 @@ def main():
     data_table = bank_movements.get_frame()
 
     # We take a slice of the frame based on the dates we want
-    # ini_date = datetime(2022, 10, 1)
+    ini_date = datetime.datetime(2023, 1, 1)
     # end_date = datetime(2026, 2, 1)
     end_date = datetime.datetime.now()
-    ini_date = end_date + relativedelta(months=-1)
+    # ini_date = end_date + relativedelta(months=-1)
 
     data_table, days = dates_slice(data_table, ini_date, end_date)
 
