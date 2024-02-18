@@ -1,0 +1,23 @@
+{
+    "0049": {
+        "name": "Santander",
+        "personal_account": {
+            "row": 8,
+            "col": "B:D"
+        }        
+    },
+    "2100": {
+        "name": "Caixabank",
+        "personal_account": {
+            "row": 2,
+            "col": "A:C"
+        }
+    },
+    "": {
+        "name": "",
+        "personal_account": {
+            "row": 0,
+            "col": "A:C"
+        }
+    }
+}

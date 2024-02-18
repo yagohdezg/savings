@@ -1,66 +1,28 @@
 import pandas as pd
 from datetime import datetime
+import Constants
 
-EXPENSE_CAREGORIES = {
-        "car": [
-            "Shell",
-            "Easygas",
-            "Telpark",
-            "Parking",
-            "Alisal",
-            "E3055"
-        ],
-        "food": [
-            "Lupa",
-            "Mercadona",
-            "McDonald",
-            "Bazar",
-            "Supermercado"
-        ],
-        "university": [
-            "Matricula",
-            "Ufg32-ciencias"
-        ],
-        "internet": [
-            "Telefonica"
-        ],
-        "electric_gas": [
-            "TotalEnergies"
-        ]
-    }
 
-INCOME_CATEGORIES = {
-        "bizums": [
-            "Bizum"
-        ],
-        "work": [
-            "Constancia"
-        ],
-        "invest": [
-            "Kraken"
-        ]
-    }
 
 def dates_slice(frame: pd.DataFrame, ini_date: datetime, end_date: datetime):
     ini_date = ini_date if frame["date"].min() < ini_date else frame["date"].min()
     end_date = end_date if frame["date"].max() > end_date else frame["date"].max()
     
     mask = (frame["date"] > ini_date) & (frame["date"] <= end_date)
-    days = (end_date - ini_date).days
     
-    return frame.loc[mask], days
+    return frame.loc[mask]
 
 
 def sort_expenses(frame: pd.DataFrame):
     frame = frame[frame["amount"] < 0]
     
-    return sort_frame_with_categories(frame, EXPENSE_CAREGORIES)    
+    return sort_frame_with_categories(frame, Constants.EXPENSE_CATEGORIES)    
 
 
 def sort_income(frame: pd.DataFrame):
     frame = frame[frame["amount"] > 0]
 
-    return sort_frame_with_categories(frame, INCOME_CATEGORIES)
+    return sort_frame_with_categories(frame, Constants.INCOME_CATEGORIES)
     
 
 def sort_frame_with_categories(frame: pd.DataFrame, categories: dict):
@@ -69,7 +31,7 @@ def sort_frame_with_categories(frame: pd.DataFrame, categories: dict):
 
     for category in categories:
         key_words = categories[category]
-
+        
         all_matches = map(lambda key_word: frame[descriptions.str.contains(f"(?i){key_word}", regex=True)], key_words)
         all_matches = pd.concat(all_matches)
 

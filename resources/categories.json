@@ -1,0 +1,57 @@
+{
+    "PERSONAL_CATEGORIES": {
+        "car": [
+            "Shell",
+            "Easygas",
+            "Telpark",
+            "Parking",
+            "Alisal",
+            "E3055"
+        ],
+        "university": [
+            "Matricula",
+            "Ufg32-ciencias"
+        ],
+        "bizum": [
+            "Bizum"
+        ],
+        "invest": [
+            "Kraken"
+        ],
+        "work": [
+            "Constancia",
+            "Ayuda Estudio",
+            "Nordis"
+        ]
+    },
+    "HOME_CATEGORIES": {
+        "food": [
+            "Lupa",
+            "Mercadona",
+            "McDonald",
+            "Bazar",
+            "Supermercado",
+            "Alimentacion",
+            "BK"
+        ],
+        "internet": [
+            "Telefonica"
+        ],
+        "electric_gas": [
+            "TotalEnergies",
+            "Comercializadora Regulada",
+            "Pepe"
+        ],
+        "gato": [
+            "Kiwoko",
+            "Veterin",
+            "Tiendanimal"
+        ],
+        "casa": [
+            "Leroy Merlin",
+            "Ikea",
+            "Farmacia",
+            "Taxi"
+        ]
+    }
+}
